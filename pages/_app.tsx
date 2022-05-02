@@ -31,6 +31,7 @@ const theme = extendTheme({
   },
 })
 
+// eslint-disable-next-line react/function-component-definition
 function MyApp({ Component, pageProps }) {
   return (
     <ChakraProvider theme={theme}>
