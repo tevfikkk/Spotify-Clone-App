@@ -5,12 +5,15 @@ import { NextApiRequest, NextApiResponse } from 'next'
 import prisma from '../../lib/prisma'
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
+  // generate salt
   const salt = bcrypt.genSaltSync()
+  // get email and password from body to login
   const { email, password } = req.body
 
-  let user
+  let user: any
 
   try {
+    // create user with prisma client and hash given password
     user = await prisma.user.create({
       data: {
         email,
@@ -23,7 +26,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     return
   }
 
-  // creates a unique token to distinguish all users
+  // generate token for user with user information
   const token = jwt.sign(
     {
       email: user.email,
@@ -34,6 +37,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     { expiresIn: '8h' }
   )
 
+  // set header for cookie
   res.setHeader(
     'Set-Cookie',
     cookie.serialize('TRAX_ACCESS_TOKEN', token, {
@@ -45,5 +49,6 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     })
   )
 
+  // response with user
   res.json(user)
 }
