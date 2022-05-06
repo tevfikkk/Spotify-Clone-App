@@ -1,6 +1,5 @@
 {
   "name": "spotify-apk",
-  "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -22,16 +21,15 @@
     "format-duration": "^1.4.0",
     "framer-motion": "^4.1.17",
     "jsonwebtoken": "^8.5.1",
-    "next": "12.1.5",
-    "react": "18.1.0",
-    "react-dom": "18.1.0",
+    "next": "12.0.7",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
     "react-howler": "^5.2.0",
     "react-icons": "^4.3.1",
     "reset-css": "^5.0.1",
     "swr": "^1.1.1"
   },
   "devDependencies": {
-    "@types/node": "^17.0.30",
     "@types/react": "^17.0.37",
     "@typescript-eslint/eslint-plugin": "^5.6.0",
     "@typescript-eslint/parser": "^5.6.0",
