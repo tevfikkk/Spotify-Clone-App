@@ -3,15 +3,18 @@ import { GetServerSideProps } from 'next'
 import { Image } from '@chakra-ui/react'
 import GradientLayout from '../components/gradientLayout'
 import prisma from '../lib/prisma'
+import { useMe } from '../lib/hooks'
 
 const Home = ({ artists }) => {
+  const { user } = useMe()
+
   return (
     <GradientLayout
       color='blue'
       roundImage
       subtitle='profile'
-      title='Tevfik'
-      description='15 public playlist'
+      title={`${user?.firstName} ${user?.lastName}`}
+      description={`${user?.playlistsCount} public playlists`}
       image='/kaido.png'>
       <Box color='white' paddingX='40px'>
         <Box marginBottom='50px'>
