@@ -35,7 +35,7 @@ export const artistsData: {
     ],
   },
   {
-    name: 'LiQWYD',
+    name: 'Cortana',
     songs: [
       {
         name: 'Winter',
