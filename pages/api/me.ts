@@ -9,7 +9,6 @@ export default validateRoute(
         userId: user.id,
       },
     })
-    console.log(playlistsCount)
     res.json({ ...user, playlistsCount })
   }
 )
