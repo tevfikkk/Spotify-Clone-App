@@ -96,11 +96,9 @@ const Player = ({ songs, activeSong }) => {
 
   const onEnd = () => {
     if (repeatRef.current) {
-      console.log('should repeat')
       setSeek(0)
       soundRef.current.seek(0)
     } else {
-      console.log('why did you get here')
       nextSong()
     }
   }

@@ -1,4 +1,5 @@
 import { FC } from 'react'
+import Head from 'next/head'
 import GradientLayout from '../../components/gradientLayout'
 import { validateToken } from '../../lib/auth'
 import prisma from '../../lib/prisma'
@@ -22,15 +23,21 @@ const getBGColor = (id: any) => {
 const Playlist: FC = ({ playlist }: any) => {
   const color = getBGColor(playlist.id)
   return (
-    <GradientLayout
-      color={color}
-      roundImage={false}
-      title={playlist.name}
-      subtitle='playlist'
-      description={`${playlist.songs.length} songs`}
-      image={`https://picsum.photos/400?random=${playlist.id}`}>
-      <SongTable songs={playlist.songs} />
-    </GradientLayout>
+    <div>
+      <Head>
+        <title>Trax | Playlist</title>
+        <meta property='og:title' content='My page title' key='title' />
+      </Head>
+      <GradientLayout
+        color={color}
+        roundImage={false}
+        title={playlist.name}
+        subtitle='playlist'
+        description={`${playlist.songs.length} songs`}
+        image={`https://picsum.photos/400?random=${playlist.id}`}>
+        <SongTable songs={playlist.songs} />
+      </GradientLayout>
+    </div>
   )
 }
 
