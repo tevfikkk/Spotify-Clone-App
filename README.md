@@ -13,7 +13,7 @@ https://spotify-app-clone-2ko7z4nfd-tevfikkk.vercel.app/signin
 
 <div align="center">
 <h2>Screenshots</h2>
-  ![trax0](https://user-images.githubusercontent.com/79837579/167272004-5c1ccf3d-5211-47f9-9472-609cba771745.png)
+  https://user-images.githubusercontent.com/79837579/167272004-5c1ccf3d-5211-47f9-9472-609cba771745.png
 
   
 
