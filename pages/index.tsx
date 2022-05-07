@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-curly-brace-presence */
 import { Box, Flex, Text } from '@chakra-ui/layout'
 import { GetServerSideProps } from 'next'
 import { Image } from '@chakra-ui/react'
@@ -40,7 +41,10 @@ const Home = ({ artists }) => {
                   borderRadius='10px'
                   padding='15px'
                   width='100%'>
-                  <Image src='./artistsPics/cortana.png' borderRadius='100%' />
+                  <Image
+                    src={`./artistsPics/cortana.png`}
+                    borderRadius='100%'
+                  />
                   <Box marginTop='10px'>
                     <Text fontSize='large'>{artist.name}</Text>
                     <Text fontSize='x-small'>Artist</Text>
